@@ -4,10 +4,11 @@ import (
     "net/http"
     "github.com/labstack/echo"
     "github.com/labstack/echo/middleware"
+    _ "github.com/go-sql-driver/mysql"
   )
 
 func main() {
-
+    db, err := sql.Open("mysql", "echosample:echosample@/echo_sample")
     e := echo.New()
 
     // Access-Control-Allow-Origin対応
